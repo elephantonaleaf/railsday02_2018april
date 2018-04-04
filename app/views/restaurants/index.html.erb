@@ -1,0 +1,15 @@
+<h1>yelp rip off</h1>
+
+<% @restaurants.each do |r| %>
+
+  <!-- <h2><%= link_to r.name, restaurant_path(r.id) %></h2> -->
+  <h2><%= link_to r.name, restaurant_path(r) %></h2>
+  <p><%= r.address %> - <%= r.food_type %> - <%= r.rating %></p>
+  <p><%= link_to "edit", edit_restaurant_path(r)  %></p> |
+  <p><%= link_to "delete", restaurant_path(r), method: :delete, data: {confirm: "Are you sure?"} %></p>
+<% end %>
+
+
+
+
+<p><%= link_to "New Restaurant", new_restaurant_path %></p>

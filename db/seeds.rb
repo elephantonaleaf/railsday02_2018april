@@ -5,3 +5,22 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Restaurant.delete_all
+puts "Deleted old restaurants"
+
+Restaurant.create(name: "Morganfield", address: "Tianshan lu", food_type: "BBQ Ribs", rating: 5)
+
+types = %w{korean sichuan chinese}
+
+10.times do
+  Restaurant.create(
+    name: Faker::Hipster.word,
+    address: Faker::Address.city,
+    food_type: types.sample,
+    rating: Faker::Number.between(1, 5)
+    )
+end
+
+puts "Created Restaurants"
+

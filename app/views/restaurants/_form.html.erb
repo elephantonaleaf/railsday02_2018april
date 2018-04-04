@@ -1,0 +1,12 @@
+<h3>form for</h3>
+<!-- <%= @restaurant = Restaurant.new %> -->
+<!-- rails form helper (ff tab)-->
+<%= form_for(@restaurant) do |f| %>
+    <%= f.label :name, "Enter a name" %>
+    <%= f.text_field :name %>
+    <%= f.label :address, "Enter a address" %>
+    <%= f.text_field :address %>
+    <%= f.label :food_type, "Enter a cuisine" %>
+    <%= f.text_field :food_type %>
+    <%= f.submit %>
+<% end %>
